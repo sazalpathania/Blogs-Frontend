@@ -1,0 +1,70 @@
+.navbar {
+  height: 64px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 63%;
+  padding: 40px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* LEFT SIDE */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 120px;
+  height: 50px;
+}
+
+/* RIGHT SIDE */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #2a2d33;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link.active {
+  color: #2563eb;
+}
+
+/* USER MENU */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.user-avatar {
+  width: 28px;
+  height: 28px;
+  background-color: #d1d5db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.user-name {
+  font-size: 14px;
+  color: #374151;
+}

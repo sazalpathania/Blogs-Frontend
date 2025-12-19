@@ -1,0 +1,96 @@
+.register-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f6f8;
+}
+
+.register-card {
+  width: 450px;
+  padding: 35px 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*.logo img {
+  width: 60px;
+  height: 60px;
+}*/
+
+.title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 500;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.2s;
+}
+
+form input:focus {
+  border-color: #0077ff;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  background: #0097e6;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s ease-in-out;
+}
+
+.signup-btn:hover {
+  background: #007acc;
+}
+
+.signin-link {
+  text-align: center;
+  margin-top: 15px;
+  color: #555;
+}
+
+.signin-link a {
+  color: #0077ff;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 100px; /* increased from 40px */
+  height: 100px; /* increased from 40px */
+  object-fit: contain;
+}
