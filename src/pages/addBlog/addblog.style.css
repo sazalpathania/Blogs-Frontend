@@ -7,8 +7,8 @@
 
 /* Page heading */
 .page-title {
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: 800;
   margin-bottom: 30px;
   color: #2c2c2c;
 }
@@ -22,8 +22,8 @@
 
 /* Labels */
 .add-blog-form label {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 800;
   color: #555;
 }
 
