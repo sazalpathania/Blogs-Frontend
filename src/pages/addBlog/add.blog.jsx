@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { API_URL2 } from "../../config";
 import axios from "axios";
+import "./addblog.style.css";
 
 function AddBlog() {
   const [title, setTitle] = useState("");
@@ -41,32 +42,44 @@ function AddBlog() {
   };
   return (
     <>
-      <div>
-        <h1>Add Blogs</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={title}
-            placeholder="Enter title..."
-            onChange={(e) => setTitle(e.target.value)}
-          ></input>
+      <div className="add-blog-container">
+  <h1 className="page-title">Add Blog</h1>
 
-          <textarea
-            type="text"
-            value={description}
-            placeholder="Enter description..."
-            onChange={(e) => setDescription(e.target.value)}
-          ></textarea>
+  <form className="add-blog-form" onSubmit={handleSubmit}>
+    <label>Title</label>
+    <input
+      className="input-field"
+      type="text"
+      value={title}
+      placeholder="Write here"
+      onChange={(e) => setTitle(e.target.value)}
+    />
 
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => setImage(e.target.files[0])}
-          ></input>
+    <label>Description</label>
+    <textarea
+      className="textarea-field"
+      value={description}
+      placeholder="Write here"
+      onChange={(e) => setDescription(e.target.value)}
+    />
 
-          <button type="submit">{loading ? "Uploading..." : "Add Blog"}</button>
-        </form>
-      </div>
+    <label>Upload Image</label>
+    <div className="upload-box">
+      <input
+        className="file-input"
+        type="file"
+        accept="image/*"
+        onChange={(e) => setImage(e.target.files[0])}
+      />
+      <span>Upload here</span>
+    </div>
+
+    <button className="save-btn" type="submit">
+      {loading ? "Uploading..." : "Save"}
+    </button>
+  </form>
+</div>
+
     </>
   );
 }

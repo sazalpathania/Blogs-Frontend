@@ -1,0 +1,97 @@
+/* Page container */
+.add-blog-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Page heading */
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #2c2c2c;
+}
+
+/* Form layout */
+.add-blog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Labels */
+.add-blog-form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Inputs */
+.input-field {
+  height: 45px;
+  padding: 0 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.textarea-field {
+  min-height: 120px;
+  padding: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  font-size: 14px;
+  resize: none;
+}
+
+/* Upload box */
+.upload-box {
+  position: relative;
+  height: 180px;
+  border: 2px dashed #cfd8e3;
+  border-radius: 10px;
+  background-color: #f9fbfd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.upload-box span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Hide default file input */
+.file-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Save button */
+.save-btn {
+  margin-top: 20px;
+  height: 48px;
+  background-color: #1f73d2;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: #155bb5;
+}
+
+/* Disabled state */
+.save-btn:disabled {
+  background-color: #9bbce4;
+  cursor: not-allowed;
+}
