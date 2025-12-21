@@ -21,6 +21,7 @@ export const Login = () => {
       });
 
       localStorage.setItem("token", res.data.token);
+
       navigate("/main-layout");
     } catch (error) {
       setError(error.response?.data?.message);
