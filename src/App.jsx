@@ -7,6 +7,7 @@ import ForgetPassword from "./components/forgetpass.component.jsx";
 import AddBlog from "./pages/addBlog/add.blog.jsx";
 import MainLayout from "./pages/layouts/main.layout.jsx";
 import "./App.css";
+import MyBlogs from "./pages/myBlog/myBlog.jsx";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         >
           <Route index element={<Dashboard />} />
           <Route path="add-blog" element={<AddBlog />} />
+          <Route path="myblogs" element={<MyBlogs />} />
         </Route>
       </Routes>
     </BrowserRouter>

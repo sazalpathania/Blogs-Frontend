@@ -1,6 +1,6 @@
 import "./blog.style.css";
 
-const BlogCard = ({ blog }) => {
+const BlogCard = ({ blog, handleDelete, showDelete = false }) => {
   return (
     <div className="blog-card">
       <h4>{blog.title}</h4>
@@ -13,6 +13,12 @@ const BlogCard = ({ blog }) => {
         <span>{blog.author?.username}</span>
         <small>{new Date(blog.createdAt).toDateString()}</small>
       </div>
+
+      {showDelete && (
+        <button className="delete-btn" onClick={() => handleDelete(blog._id)}>
+          Delete
+        </button>
+      )}
     </div>
   );
 };

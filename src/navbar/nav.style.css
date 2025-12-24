@@ -3,7 +3,7 @@
   background-color: #ffffff;
   display: flex;
   align-items: center;
-  gap: 63%;
+  gap: 60%;
   padding: 40px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
   position: sticky;
@@ -67,4 +67,44 @@
 .user-name {
   font-size: 14px;
   color: #374151;
+}
+
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: black;
+  color: #2a2d33;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  min-width: 120px;
+  padding: 6px 0;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 8px 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background-color: black;
 }

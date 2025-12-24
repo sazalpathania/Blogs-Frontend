@@ -13,10 +13,8 @@ function Dashboard() {
     const fetchBlogs = async () => {
       try {
         const res = await axios.get(`${API_URL2}/get`);
-        console.log("res", res);
         setBlogs(res.data.blog || []);
         setLoading(false);
-        console.log(blogs);
       } catch (error) {
         console.error("Internal server error", error);
         setBlogs([]);
@@ -33,7 +31,6 @@ function Dashboard() {
 
   return (
     <>
-      <>test</>
       <div className="blog-grid">
         {blogs.map((blog) => (
           <BlogCard key={blog._id} blog={blog} />
