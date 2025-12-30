@@ -77,6 +77,10 @@ const MyBlogs = () => {
 
   //Delete handler//
   const handleDelete = async (blogID) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this blog?"
+    );
+    if (!confirmDelete) return;
     try {
       const token = localStorage.getItem("token");
       await axios.delete(`${API_URL2}/delete/${blogID}`, {

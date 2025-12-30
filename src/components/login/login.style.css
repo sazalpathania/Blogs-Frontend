@@ -23,13 +23,13 @@
 
 /* Logo */
 .login-form img {
-  width: 140px; /* slightly bigger */
+  width: 140px;
   margin-bottom: 15px;
 }
 
 /* Headings */
 .login-form h1 {
-  font-size: 26px; /* slightly bigger */
+  font-size: 26px;
   font-weight: 700;
   margin-bottom: 8px;
   color: #1b1b1b;

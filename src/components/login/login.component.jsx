@@ -35,7 +35,7 @@ export const Login = () => {
         <div className="login-form">
           <img alt="Logo" src={Logo}></img>
           <h1>Welcome to Blogs 👋</h1>
-          <p>Pleade sign in to your account and start adventure </p>
+          <p>Please sign in to your account and start adventure </p>
 
           {error ? <p style={{ color: "red" }}>{error}</p> : ""}
           <form onSubmit={handleLogin}>
