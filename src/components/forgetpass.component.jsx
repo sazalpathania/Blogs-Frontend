@@ -7,16 +7,20 @@ import "./forgetpass.style.css";
 const ForgetPassword = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
+    setLoading(true);
 
     try {
       const res = await axios.post(`${API_URL}/forgot-password`, { email });
       setMessage(res.data.message);
     } catch (error) {
       setMessage(error.response?.data?.message || "Something went wrong");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -25,8 +29,8 @@ const ForgetPassword = () => {
       <div className="login-form">
         <img src={Logo} alt="Logo" />
 
-        <h1>Forgot Password 🔐</h1>
-        <p>Enter your email and we will send a reset link</p>
+        <h1>Forgot Password</h1>
+        <p>Enter your registered email to reset your password</p>
 
         {message && <p className="status-msg">{message}</p>}
 
@@ -39,15 +43,16 @@ const ForgetPassword = () => {
               value={email}
               className="form-control"
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
 
-          <button type="submit">Send Reset Link</button>
+          <button type="submit" disabled={loading}>
+            {loading ? "Sending..." : "Send Reset Link"}
+          </button>
 
           <div className="create-link">
-            <a href="/" data-discover="true">
-              Back to Login
-            </a>
+            <a href="/">Back to Login</a>
           </div>
         </form>
       </div>

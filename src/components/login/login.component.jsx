@@ -10,6 +10,7 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -51,55 +52,63 @@ export const Login = () => {
                 className="form-control"
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
-              <div className="invalid-feedback">Invalid email format</div>
             </div>
             <div className="mb-3">
-              <label className="form-label" for="formPassword">
+              <label className="form-label" htmlFor="formPassword">
                 Password
               </label>
-              <div className="adding-eye-icon">
+
+              <div className="password-wrapper">
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
                   id="formPassword"
                   className="form-control"
                   name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                ></input>
-                <div style={{ cursor: "pointer" }}>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M19.439 15.439C20.3636 14.5212 21.0775 13.6091 21.544 12.955C21.848 12.5287 22 12.3155 22 12C22 11.6845 21.848 11.4713 21.544 11.045C20.1779 9.12944 16.6892 5 12 5C11.0922 5 10.2294 5.15476 9.41827 5.41827M6.74742 6.74742C4.73118 8.1072 3.24215 9.94266 2.45604 11.045C2.15201 11.4713 2 11.6845 2 12C2 12.3155 2.15201 12.5287 2.45604 12.955C3.8221 14.8706 7.31078 19 12 19C13.9908 19 15.7651 18.2557 17.2526 17.2526"
-                      stroke="#545454"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                    <path
-                      d="M9.85786 10C9.32783 10.53 9 11.2623 9 12.0711C9 13.6887 10.3113 15 11.9289 15C12.7377 15 13.47 14.6722 14 14.1421"
-                      stroke="#545454"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    ></path>
-                    <path
-                      d="M3 3L21 21"
-                      stroke="#545454"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
-                </div>
+                />
+
+                <span
+                  className="eye-icon"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    // 👁️ OPEN EYE
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M2 12C3.8 7.6 7.8 5 12 5C16.2 5 20.2 7.6 22 12C20.2 16.4 16.2 19 12 19C7.8 19 3.8 16.4 2 12Z"
+                        stroke="#545454"
+                        strokeWidth="1.5"
+                      />
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="3"
+                        stroke="#545454"
+                        strokeWidth="1.5"
+                      />
+                    </svg>
+                  ) : (
+                    // 🚫 CLOSED EYE
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <path d="M3 3L21 21" stroke="#545454" strokeWidth="1.5" />
+                      <path
+                        d="M9.9 5.4C10.6 5.1 11.3 5 12 5C16.2 5 20.2 7.6 22 12C21.3 13.7 20.3 15.1 19.1 16.2"
+                        stroke="#545454"
+                        strokeWidth="1.5"
+                      />
+                      <path
+                        d="M6.3 7.2C4.7 8.4 3.5 10.1 2 12C3.8 16.4 7.8 19 12 19C13.3 19 14.6 18.7 15.8 18.1"
+                        stroke="#545454"
+                        strokeWidth="1.5"
+                      />
+                    </svg>
+                  )}
+                </span>
               </div>
-              <div className="invalid-feedback"></div>
             </div>
+
             <div className="mb-3 check-w-forgot">
               <a href="/forgot-password" data-discover="true">
                 Forgot Password?

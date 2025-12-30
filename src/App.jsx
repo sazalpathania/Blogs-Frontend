@@ -8,6 +8,7 @@ import AddBlog from "./pages/addBlog/add.blog.jsx";
 import MainLayout from "./pages/layouts/main.layout.jsx";
 import "./App.css";
 import MyBlogs from "./pages/myBlog/myBlog.jsx";
+import ResetPassword from "./components/resetpass.component.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgetPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
         <Route
           path="/main-layout"
           element={
