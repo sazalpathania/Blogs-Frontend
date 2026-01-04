@@ -119,45 +119,48 @@ const MyBlogs = () => {
       </div>
 
       {editing && (
-        <div className="modal">
-          <form onSubmit={handleEditSubmit} className="add-blog-form">
-            <h3>Edit Blog</h3>
+        <div className="modal-overlay">
+          <div className="modal-container">
+            <form onSubmit={handleEditSubmit} className="modal-form">
+              <h3>Edit Blog</h3>
 
-            <input
-              className="input-field"
-              type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              placeholder="Title"
-              required
-            />
-
-            <textarea
-              className="textarea-field"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              placeholder="Description"
-              required
-            />
-
-            <label>Upload Image</label>
-            <div className="upload-box">
               <input
-                className="file-input"
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Title"
+                required
+              />
+
+              <textarea
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Description"
+                required
+              />
+
+              <label>Upload Image</label>
+              <input
                 type="file"
                 accept="image/*"
                 onChange={(e) => setImage(e.target.files[0])}
               />
-              <span>Upload here</span>
-            </div>
 
-            <div className="modal-actions">
-              <button type="submit">Update</button>
-              <button type="button" onClick={() => setEditing(null)}>
-                Cancel
-              </button>
-            </div>
-          </form>
+              <div className="modal-actions">
+                <button type="submit" className="btn-primary">
+                  Update
+                </button>
+                <button
+                  style={{ backgroundColor: "red" }}
+                  type="button"
+                  className="btn-secondary"
+                  onClick={() => setEditing(null)}
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       )}
     </>

@@ -13,12 +13,13 @@ function Dashboard() {
     const fetchBlogs = async () => {
       try {
         const res = await axios.get(`${API_URL2}/get`);
+
         setBlogs(res.data.blog || []);
-        setLoading(false);
       } catch (error) {
         console.error("Internal server error", error);
         setBlogs([]);
         setError("Failed to load blogs");
+      } finally {
         setLoading(false);
       }
     };
